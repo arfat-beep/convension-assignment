@@ -201,8 +201,42 @@
             <img class="img-fluid" src="./images/wedding.png" alt="" />
           </div>
           <div
-            class="col-12 col-md-6 d-flex flex-column justify-content-center"
+            class="col-12 col-md-6 d-flex flex-column justify-content-center position-relative"
           >
+            <!-- toast start=====
+                ===================
+                ========================
+                =============================
+                ===================================
+                ======================================================================
+        ========
+        =====
+        =======
+        ========
+        ===========
+        ========
+        ==========
+        ============
+        ============ -->
+            <div class="toast show position-absolute top-0" id="myToast">
+              <div
+                class="toast-body d-flex justify-content-between align-items-center"
+              >
+                <p class="h5">
+                  <i class="fas fa-gift" style="color: #0dcaf0"></i> 20% off on
+                  next booking
+                </p>
+                <button
+                  type="button"
+                  class="btn-close"
+                  id="myBtn"
+                  data-bs-dismiss="toast"
+                  onclick=""
+                ></button>
+              </div>
+            </div>
+            <!-- toast End======================================================================================================================================================================================
+        ================================================================================= -->
             <h2>Every moment is Precious</h2>
             <p class="my-4">
               Life can be unpredictable but we must learn to stop and smell the
@@ -438,6 +472,32 @@
         </div>
       </section>
       <!-- Clients Section End ============================ -->
+      <!-- Subscribe our Newslatter start============================= -->
+      <section class="container bg-warning">
+        <div class="row row-cols-1 g-5 my-5">
+          <div class="col p-5 text-center">
+            <h1 class="text-uppercase">let's stay in touch</h1>
+            <p>Get updates on sales specials and more</p>
+            <div class="d-flex justify-content-center">
+              <form class="d-flex w-50">
+                <input
+                  class="form-control text-dark border-0 rounded-0"
+                  type="Enter your email"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-none mia-bibi-bg-info"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Subscribe our Newslatter End============================= -->
       <!-- Asked Questions Start================================ -->
       <section class="container my-5 pt-5">
         <h1 class="text-center mb-5">Frequently Asked Questions</h1>
@@ -613,5 +673,18 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <!-- Vanilla Js===================================== -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var toastElementList = [].slice.call(
+          document.querySelectorAll(".toast")
+        );
+        var toastList = toastElementList.map(function (element) {
+          return new bootstrap.Toast(element, {
+            autohide: false,
+          });
+        });
+      });
+    </script>
   </body>
 </html>
